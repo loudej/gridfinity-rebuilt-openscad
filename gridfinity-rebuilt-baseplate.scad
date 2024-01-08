@@ -178,18 +178,18 @@ module cutter_counterbore(){
 
 module profile_skeleton() {
     l = l_grid-2*r_c2-2*r_c1;
-    minkowski() {
+    //minkowski() {
         difference() {
             square([l-2*r_skel+2*d_clear,l-2*r_skel+2*d_clear], center = true);
             pattern_circular(4)
             translate([l_grid/2-d_hole_from_side,l_grid/2-d_hole_from_side,0])
             minkowski() {
                 square([l,l]);
-                circle(r_hole2+r_skel+2);
+                circle(r_hole2+r_skel);
            }
         }
-        circle(r_skel);
-    }
+    //    circle(r_skel);
+    //}
 }
 
 module cutter_screw_together(gx, gy, off) {
